@@ -1,0 +1,93 @@
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mail, User, Home } from "lucide-react";
+
+export default function Nettside() {
+  return (
+    <div className="min-h-screen bg-gray-50 text-gray-800">
+      {/* Header */}
+      <header className="flex items-center justify-between p-6 shadow-sm bg-white">
+        <h1 className="text-2xl font-bold">Mi Nettside</h1>
+        <nav className="space-x-6 text-base">
+          <a href="#heim" className="hover:underline">Heim</a>
+          <a href="#om" className="hover:underline">Om meg</a>
+          <a href="#kontakt" className="hover:underline">Kontakt</a>
+        </nav>
+      </header>
+
+      {/* Hero Section */}
+      <section
+        id="heim"
+        className="flex flex-col items-center justify-center text-center py-24 px-6"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-4"
+        >
+          Velkomen til nettsida mi
+        </motion.h2>
+        <p className="max-w-xl text-lg mb-8">
+          Dette er ei enkel nettside du kan bruke som start. Du kan endre tekst,
+          bilete og fargar slik du vil.
+        </p>
+        <Button className="rounded-2xl px-6 py-3 text-base">
+          Les meir
+        </Button>
+      </section>
+
+      {/* About Section */}
+      <section id="om" className="py-16 px-6 max-w-5xl mx-auto">
+        <h3 className="text-3xl font-semibold mb-8 text-center">Om meg</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-6 text-center">
+              <User className="mx-auto mb-4" />
+              <h4 className="font-semibold text-lg mb-2">Kven er eg?</h4>
+              <p>
+                Skriv litt om deg sjølv her. Til dømes interesser, skule eller
+                hobbyar.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-6 text-center">
+              <Home className="mx-auto mb-4" />
+              <h4 className="font-semibold text-lg mb-2">Prosjekt</h4>
+              <p>
+                Du kan vise fram prosjekt, arbeid eller ting du har laga.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-6 text-center">
+              <Mail className="mx-auto mb-4" />
+              <h4 className="font-semibold text-lg mb-2">Kontakt</h4>
+              <p>
+                Legg inn e-post eller sosiale medium slik at folk kan nå deg.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="kontakt"
+        className="py-16 px-6 bg-white border-t text-center"
+      >
+        <h3 className="text-3xl font-semibold mb-6">Kontakt meg</h3>
+        <p className="mb-6">Send ei melding dersom du vil ta kontakt.</p>
+        <Button className="rounded-2xl px-6 py-3 text-base">
+          Send melding
+        </Button>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center py-6 text-sm text-gray-500">
+        © 2026 Mi Nettside
+      </footer>
